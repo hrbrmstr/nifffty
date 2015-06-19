@@ -16,6 +16,12 @@ maker(event = NULL, value1 = NULL, value2 = NULL, value3 = NULL)
 \item{value3}{event parameter (optional)}
 }
 \description{
-Issue IFTTT maker channel POST event
+You must have an IFTTT account and an event trigget setup with an
+IFTTT Maker channel. See
+\href{http://bconnelly.net/2015/06/connecting-r-to-everything-with-ifttt/}{this post} for
+more information and a full example.
+}
+\seealso{
+\url{http://bconnelly.net/2015/06/connecting-r-to-everything-with-ifttt/}
 }
 

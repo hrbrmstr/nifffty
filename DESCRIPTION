@@ -7,5 +7,5 @@ Description: Provides a simple interface to post messages to IFTTT 'Maker' chann
 Depends: R (>= 3.1.0)
 License: MIT + file LICENSE
 LazyData: true
-Suggests: testthat
+Suggests: testthat, Rook, httpuv, jsonlite
 Imports: httr

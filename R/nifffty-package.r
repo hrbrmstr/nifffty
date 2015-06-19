@@ -3,4 +3,6 @@
 #' @docType package
 #' @author Bob Rudis (@@hrbrmstr)
 #' @import httr
+#' @import httpuv
+#' @import Rook
 NULL

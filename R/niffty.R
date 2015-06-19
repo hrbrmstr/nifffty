@@ -35,10 +35,16 @@ ifttt_api_key <- function(force = FALSE) {
 
 #' Issue IFTTT maker channel POST event
 #'
+#' You must have an IFTTT account and an event trigget setup with an
+#' IFTTT Maker channel. See
+#' \href{http://bconnelly.net/2015/06/connecting-r-to-everything-with-ifttt/}{this post} for
+#' more information and a full example.
+#'
 #' @param event event name to trigger in IFTTT recipe
 #' @param value1 event parameter (optional)
 #' @param value3 event parameter (optional)
 #' @param value2 event parameter (optional)
+#' @seealso \url{http://bconnelly.net/2015/06/connecting-r-to-everything-with-ifttt/}
 #' @export
 maker <- function(event=NULL, value1=NULL, value2=NULL, value3=NULL) {
 
