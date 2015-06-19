@@ -23,9 +23,14 @@ Future enhancements will include the ability to *receive* Maker web request acti
 
 The following functions are implemented:
 
+-   `ifttt_api_key`: Get or set IFTTT\_KEY value
+-   `maker`: Issue IFTTT maker channel POST event
+-   `receiver`: Listen and react to IFTTT Maker web calls
+
 ### News
 
 -   Version `0.0.0.9999` released
+-   Version `0.1.0.9999` released
 
 ### Installation
 
@@ -41,7 +46,69 @@ library(nifffty)
 # current verison
 packageVersion("nifffty")
 #> [1] '0.0.0.9000'
+
+maker("rtest", "this", "is a", "test")
 ```
+
+To setup a receiver, create a script on a server that can receive requests from the internet (I named the following `listen.R`):
+
+``` r
+library(nifffty)
+
+do_it <- function(req) {
+  require(jsonlite)
+  print(fromJSON(names(req$POST())))
+  writeLines(names(req$POST()), "/tmp/bob.txt")
+}
+
+# you can change the port to match what you put into IFTTT
+
+rcvr <- receiver(port=10999, handler=do_it)
+
+print(rcvr)
+
+while (TRUE) Sys.sleep(24 * 60 * 60)
+```
+
+For this example, I created an Apple Watch IFFFT "DO Button" to send my coordinates & timestamp when pressed:
+
+![](do_button_r_nifffty.png)
+
+Once that's setup, just call the script from the command-line:
+
+    bob@server:~$ Rscript listen.R
+    Loading required package: methods
+    Loading required package: Rook
+    Server started on 0.0.0.0:10999
+    [1] nifffty http://0.0.0.0:10999/custom/nifffty
+
+    Call browse() with an index number or name to run an application.
+    Loading required package: jsonlite
+
+    Attaching package: ‘jsonlite’
+
+    The following object is masked from ‘package:utils’:
+
+        View
+        
+
+When it receives an event it will print the following to the console:
+
+    $latitude
+    [1] 43.25931
+
+    $longitude
+    [1] -70.80062
+
+    $timestamp
+    [1] "June 19, 2015 at 04:45PM"
+
+and, write the following to `/tmp/bob.txt`
+
+    bob@server:~$ cat /tmp/bob.txt
+    { "latitude": 43.2593566552207, "longitude": -70.8004647307757, "timestamp": "June 19, 2015 at 04:46PM" }
+
+This same setup will work with any IFTTT action, not just "DO" buttons.
 
 ### Test Results
 
@@ -50,9 +117,7 @@ library(nifffty)
 library(testthat)
 
 date()
-#> [1] "Fri Jun 19 09:50:04 2015"
-
-maker("rtest", "this", "is a", "test")
+#> [1] "Fri Jun 19 16:59:52 2015"
 
 test_dir("tests/")
 #> basic functionality :
