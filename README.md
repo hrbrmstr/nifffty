@@ -5,7 +5,7 @@
 ![downloads](http://cranlogs.r-pkg.org/badges/grand-total/nifffty) -->
 ![img](nifffty.png)
 
-nifffty is a simple package to post events/data to an IFTTT Maker channel/recipe.
+nifffty is a simple package to post events/data to an IFTTT Maker channel/recipe *and* receive events (via Maker) from IFTTT actions.
 
 Inspired by a [blog post by Brian Connelly](http://bconnelly.net/2015/06/connecting-r-to-everything-with-ifttt/).
 
@@ -19,7 +19,7 @@ Here is a [sample public recipe](https://ifttt.com/recipes/300804-post-maker-eve
 
 Brian's example posts an iOS notification, but you can do many, many things with this capability.
 
-Future enhancements will include the ability to *receive* Maker web request actions.
+Future enhancements will include the ability to have Shiny use Maker web POST calls as inputs.
 
 The following functions are implemented:
 
@@ -117,7 +117,7 @@ library(nifffty)
 library(testthat)
 
 date()
-#> [1] "Fri Jun 19 17:05:44 2015"
+#> [1] "Fri Jun 19 17:09:58 2015"
 
 test_dir("tests/")
 #> basic functionality :
