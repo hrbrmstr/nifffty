@@ -45,7 +45,7 @@ library(nifffty)
 
 # current verison
 packageVersion("nifffty")
-#> [1] '0.0.0.9000'
+#> [1] '0.1.0.9000'
 
 maker("rtest", "this", "is a", "test")
 ```
@@ -117,7 +117,7 @@ library(nifffty)
 library(testthat)
 
 date()
-#> [1] "Fri Jun 19 16:59:52 2015"
+#> [1] "Fri Jun 19 17:05:44 2015"
 
 test_dir("tests/")
 #> basic functionality :
