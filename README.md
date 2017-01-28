@@ -27,11 +27,6 @@ The following functions are implemented:
 -   `maker`: Issue IFTTT maker channel POST event
 -   `receiver`: Listen and react to IFTTT Maker web calls
 
-### News
-
--   Version `0.0.0.9999` released
--   Version `0.1.0.9999` released
-
 ### Installation
 
 ``` r
@@ -45,7 +40,7 @@ library(nifffty)
 
 # current verison
 packageVersion("nifffty")
-#> [1] '0.1.0.9000'
+#> [1] '0.1.1.9000'
 
 maker("rtest", "this", "is a", "test")
 ```

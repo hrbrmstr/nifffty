@@ -1,14 +1,23 @@
 Package: nifffty
-Title: Post Events to IFTTT 'Maker' Channels and Receive 'Maker' Events
-Version: 0.1.0.9000
-Authors@R: c(person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")),
+Title: Post Events to 'IFTTT' 'Maker' Channels and Receive 'Maker' Events
+Version: 0.1.1.9000
+Authors@R: c(person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre")),
              person("Bob", "Connelly", role = c("aut")))
 Maintainer: Bob Rudis <bob@rudis.net>
-Description: Provides a simple interface to post messages to IFTTT 'Maker' channels
-             from R, enabling R scripts to trigger IFTTT recipes with optional data payloads
-             and also receive and process Maker web requests.
-Depends: R (>= 3.1.0), methods
+Description: Provides a simple interface to post messages to 'IFTTT' 'Maker'
+    channels from R, enabling R scripts to trigger 'IFTTT' recipes with optional data
+    payloads and also receive and process Maker web requests.
+Depends:
+    R (>= 3.1.0)
 License: MIT + file LICENSE
 LazyData: true
-Suggests: testthat, Rook, httpuv, jsonlite
-Imports: httr
+Suggests:
+    testthat
+Imports:
+    httr,
+    Rook,
+    httpuv,
+    jsonlite,
+    methods,
+    tools
+RoxygenNote: 5.0.1
