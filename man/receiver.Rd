@@ -17,4 +17,3 @@ receiver(listen = "0.0.0.0", port = 9999, handler = NULL)
 \description{
 Listen and react to IFTTT Maker web calls
 }
-

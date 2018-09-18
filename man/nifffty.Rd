@@ -9,6 +9,5 @@
 A package to post events to IFTTT 'Maker' channels
 }
 \author{
-Bob Rudis (@hrbrmstr)
+Bob Rudis (bob@rud.is)
 }
-

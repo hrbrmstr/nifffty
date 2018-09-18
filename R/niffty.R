@@ -27,7 +27,7 @@ ifttt_api_key <- function(force = FALSE) {
   }
 
   message("Updating IFTTT_API_KEY env var")
-  Sys.setenv(IFTTT_KEY = pat)
+  Sys.setenv(IFTTT_API_KEY = pat)
 
   pat
 

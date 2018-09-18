@@ -24,4 +24,3 @@ more information and a full example.
 \seealso{
 \url{http://bconnelly.net/2015/06/connecting-r-to-everything-with-ifttt/}
 }
-
